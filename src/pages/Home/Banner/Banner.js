@@ -8,7 +8,7 @@ const Banner = () => {
     const bannerBg = {
         backgroundImage: `url(${bgImg})`,
         width: "100%",
-        height: "550px",
+        height: "625px",
         backgroundPosition: "center top",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -16,10 +16,10 @@ const Banner = () => {
     }
     return (
         <Box style={bannerBg} sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2} style={{ marginLeft: "3%" }}>
+            <Grid container spacing={2} style={{ paddingLeft: "3%" }}>
                 <Grid item style={{ textAlign: 'left', color: "white" }} xs={12} md={6}>
                     <Box>
-                        <Typography variant="h3" style={{ paddingTop: "7%" }} >
+                        <Typography variant="h3" style={{ paddingTop: "20%" }} >
                             Make Your Day<br />
                             Special
                         </Typography>
@@ -27,7 +27,7 @@ const Banner = () => {
                             We are a coffee roasting company with a big heart for the farmers in Africa who grow our wonderful 100% Arabic coffee.
                         </Typography>
                         <Link to="/explore" style={{ textDecoration: "none" }}>
-                            <Button variant="contained" style={{ backgroundColor: '#d10d0d', padding: "20px 40px" }} >Go to Shop</Button></Link>
+                            <Button variant="contained" style={{ backgroundColor: '#d10d0d', padding: "22px 60px", marginTop: "3%", fontSize: "1.2rem" }} >Go to Shop</Button></Link>
 
                     </Box>
                 </Grid>
