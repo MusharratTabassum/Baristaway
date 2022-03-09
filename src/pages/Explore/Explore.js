@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import { Container } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Product from '../Home/Product/Product';
+import Banner from './Banner/Banner';
 const products = [
     {
         name: 'Fluoride Treatment',
@@ -24,6 +25,7 @@ const products = [
 const Explore = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
+            <Banner></Banner>
             <Container>
                 <Typography sx={{ fontWeight: 500, m: 2, color: 'success.main' }} variant="h6" component="div">
                     OUR SERVICES
