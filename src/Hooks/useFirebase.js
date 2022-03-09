@@ -44,6 +44,11 @@ const useFirebase = () => {
         });
         return () => unsubscribed;
     }, [auth])
+    useEffect(() => {
+        fetch(`https://stark-caverns-04377.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
     //logout from the system
     const logOut = () => {
         setIsLoading(true);
@@ -65,6 +70,44 @@ const useFirebase = () => {
         })
             .then()
     }
+    //--------------------------------Email/PassWord--------------------------------------//
+    const registerUser = (email, password, name, history) => {
+        setIsLoading(true);
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                setAuthError('');
+                const newUser = { email, displayName: name };
+                setUser(newUser);
+                // save user to the database
+                saveUser(email, name, 'POST');
+                // send name to firebase after creation
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                }).then(() => {
+                }).catch((error) => {
+                });
+                history.replace('/');
+            })
+            .catch((error) => {
+                setAuthError(error.message);
+                console.log(error);
+            })
+            .finally(() => setIsLoading(false));
+    }
+    const loginUser = (email, password, location, history) => {
+        setIsLoading(true);
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
+                setAuthError('');
+            })
+            .catch((error) => {
+                setAuthError(error.message);
+            })
+            .finally(() => setIsLoading(false));
+    }
+
 
     return {
         user,
@@ -72,6 +115,8 @@ const useFirebase = () => {
         token,
         isLoading,
         authError,
+        registerUser,
+        loginUser,
         signInWithGoogle,
         logOut,
     }
