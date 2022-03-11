@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import MyOrders from './pages/Dashboard/MyOrders/MyOrders';
+import Payment from './pages/Dashboard/Payment/Payment';
 import Explore from './pages/Explore/Explore';
 import Home from './pages/Home/Home/Home';
 import ProductDetailing from './pages/Home/ProductDetailing/ProductDetailing';
@@ -40,6 +42,12 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
+            </PrivateRoute>
+            <PrivateRoute path="/myorders">
+              <MyOrders></MyOrders>
+            </PrivateRoute>
+            <PrivateRoute path="/payment">
+              <Payment></Payment>
             </PrivateRoute>
           </Switch>
         </BrowserRouter>
