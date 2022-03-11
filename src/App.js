@@ -3,6 +3,7 @@ import { Switch } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './Contexts/AuthProvider/AuthProvider';
+import AddReview from './pages/Dashboard/AddReview/AddReview';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import MyOrders from './pages/Dashboard/MyOrders/MyOrders';
 import Payment from './pages/Dashboard/Payment/Payment';
@@ -48,6 +49,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/payment">
               <Payment></Payment>
+            </PrivateRoute>
+            <PrivateRoute path="/addreview">
+              <AddReview></AddReview>
             </PrivateRoute>
           </Switch>
         </BrowserRouter>

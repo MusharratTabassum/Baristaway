@@ -56,7 +56,7 @@ const MyOrders = () => {
                                 <TableCell align="right">No of items</TableCell>
                                 <TableCell align="right">Email</TableCell>
                                 <TableCell align="right">Status</TableCell>
-                                <TableCell align="right">delete/update</TableCell>
+                                <TableCell align="right">delete</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -71,7 +71,7 @@ const MyOrders = () => {
                                     <TableCell align="center">{row.totat_packet}</TableCell>
                                     <TableCell align="right">{row.email}</TableCell>
                                     <TableCell align="right">{row.status}</TableCell>
-                                    <TableCell align="right"><button style={{ backgroundColor: "black", color: "white", padding: "6px" }} onClick={() => handleDeleteBooking(row._id)}>Cancel</button></TableCell>
+                                    <TableCell align="right"><button style={{ backgroundColor: "#d10d0d", color: "white", padding: "8px 18px", borderRadius: "6px" }} onClick={() => handleDeleteBooking(row._id)}>Cancel</button></TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>

@@ -3,29 +3,27 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { Container } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import Product from "../Product/Product"
+import Review from '../Review/Review';
 
-
-const Products = () => {
-    const [products, setProducts] = useState([])
+const Reviews = () => {
+    const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
-            .then(data => setProducts(data));
+            .then(data => setReviews(data));
     }, [])
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Container>
-
                 <Typography sx={{ fontWeight: 600, m: 5 }} variant="h4" component="div">
-                    Available Products On Online
+                    What Our Client Say About Us
                 </Typography>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                     {
-                        products.slice(0, 6).map(product => <Product
-                            key={product.name}
-                            product={product}
-                        ></Product>)
+                        reviews.map(review => <Review
+                            key={review.user_name}
+                            review={review}
+                        ></Review>)
                     }
                 </Grid>
             </Container>
@@ -33,4 +31,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default Reviews;

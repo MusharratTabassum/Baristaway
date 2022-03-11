@@ -34,7 +34,7 @@ function Dashboard(props) {
             <br />
             <Link style={{ color: "green", textDecoration: "none" }} to="/payment"><Button color="inherit">Payment</Button></Link>
             <br />
-            <Link style={{ color: "green", textDecoration: "none" }} to="/reviewus"><Button color="inherit">Review Us</Button></Link>
+            <Link style={{ color: "green", textDecoration: "none" }} to="/addreview"><Button color="inherit">Review Us</Button></Link>
             <br />
             <Link style={{ color: "green", textDecoration: "none" }} to="/reviewus"><Button color="inherit" onClick={logOut}>Log Out</Button></Link>
 
