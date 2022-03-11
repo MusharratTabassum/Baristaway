@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 const ProductBanner = () => {
     return (
         <Box sx={{ flexGrow: 1 }} style={{ marginTop: "100px" }} >
+
             <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
                     <img img-fluid

@@ -3,9 +3,12 @@ import { Switch } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './Contexts/AuthProvider/AuthProvider';
+import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import Explore from './pages/Explore/Explore';
 import Home from './pages/Home/Home/Home';
+import ProductDetailing from './pages/Home/ProductDetailing/ProductDetailing';
 import Login from './pages/Login/Login/Login';
+import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Register from './pages/Login/Register/Register';
 import Footer from './pages/Shared/Footer/Footer';
 import Navigation from './pages/Shared/Navigation/Navigation';
@@ -32,13 +35,13 @@ function App() {
             <Route path="/registration">
               <Register></Register>
             </Route>
-
-
-
+            <PrivateRoute path="/productdetail/:productId">
+              <ProductDetailing></ProductDetailing>
+            </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
           </Switch>
-          <Footer></Footer>
-
-
         </BrowserRouter>
       </AuthProvider>
 

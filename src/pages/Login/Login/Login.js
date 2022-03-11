@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import login from "../../../images/login.avif"
+import Footer from '../../Shared/Footer/Footer';
 
 const Login = () => {
 
@@ -64,7 +65,9 @@ const Login = () => {
                     <Button onClick={handleGoogleSignIn} variant="contained" style={{ backgroundColor: "green" }}>Google Sign In</Button>
                 </Grid>
             </Grid>
+            <Footer></Footer>
         </Container>
+
     );
 };
 
